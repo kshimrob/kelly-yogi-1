@@ -100,73 +100,53 @@ header > h2 {
 
 /*** Favorite Poses ***/
 
-.card-container {
-	position: relative;
+.pose {
+  	position: relative;	
 	height: 200px;
 	width: 200px;
-	perspective: 200;
 	display: inline-block;
-	margin-left: 50px;
 }
 
-.card-container:nth-of-type(1) {
-	margin-left: 0;
+.pose:hover .pose-back,
+.pose:target .pose-back {
+	opacity: 1;
 }
 
-.card {
-	height: 100%;
-	position: absolute;
-	transform-style: preserve-3d;
-	transition: all 1s ease-in-out;
-	width: 100%;
-}
-
-.card:hover {
-  transform: rotateY(180deg);
-  cursor: pointer;
-}
-
-.card .pose {
-  backface-visibility: hidden;
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  background-color: white;
-  	border-radius: 20px;
-  padding: 9.5px;
-}
-
-.card .pose-back {
-  transform: rotateY(180deg);
+.pose-back {
   background-color: #333;
+  opacity: 0;
   color: white;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0; 
+  bottom: 0;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
 }
 
-.card .bondi-blue {
+.bondi-blue {
 	background-color: #0086B3;
 }
 
-.card .jazzberry-jam {
+.jazzberry-jam {
 	background-color: #A71D5D;
 }
 
-.card .trinidad {
+.trinidad {
 	background-color: #DF5000;
 }
 
-.card .deluge {
+.deluge {
 	background-color: #795DA3;
 }
 
-.card .han-blue {
+.han-blue {
 	background-color: #3A74D0;
 }
 
-.card .foam-blue {
+.foam-blue {
 	background-color: #13293D;
 }
 
@@ -201,11 +181,54 @@ button {
 	cursor: pointer;
 	margin: 0;
 	outline: 0;
-	padding: 12px 20px;
+	padding: 8px 20px;
 	transition: all 0.1s linear;
+	vertical-align: top;
 }
 
 button:active {
 	box-shadow: 0 2px 0 #A71D5D;
 	transform: translateY(3px);
+}
+
+#yoga-edu form {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+input[type="email"] {
+	height: 30px;
+	width: 250px;
+	padding-left: 10px;
+}
+
+/*** Schedule ***/
+
+#schedule table{
+	margin: 0 auto;
+	border-collapse: collapse;
+	vertical-align: middle;
+}
+
+tr {
+	max-width: 400px;
+	outline: none;
+	text-align: center;	
+}
+
+tr.top-border {
+	border-top: 1px solid #ccc;
+}
+
+.table-padding-bottom {
+	padding-bottom: 20px;
+}
+
+.table-padding-top {
+	padding-top: 20px;
+}
+
+td {
+	width: 200px;
+	padding: 5px 0;
 }
